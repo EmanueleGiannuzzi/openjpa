@@ -1925,7 +1925,7 @@ public class ClassMetaData
         // if this is runtime, create a pc instance and scan it for comparators
         if (runtime && !Modifier.isAbstract(_type.getModifiers())) {
             ProxySetupStateManager sm = new ProxySetupStateManager();
-            sm.setProxyData(PCRegistry.newInstance(_type, sm, false), this);
+            sm.setProxyData(PCRegistry.newInstance(_type, sm, false), this.getFields());
         }
     }
 

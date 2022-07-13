@@ -43,8 +43,7 @@ class ProxySetupStateManager
 
     private Object _object = null;
 
-    public void setProxyData(PersistenceCapable pc, ClassMetaData meta) {
-        FieldMetaData[] fmds = meta.getFields();
+    public void setProxyData(PersistenceCapable pc, FieldMetaData[] fmds) {
         for (FieldMetaData fmd : fmds) {
             // This method only gets called for concrete types. We need to do this processing for fields that might
             // not be owned by pc.
