@@ -133,7 +133,7 @@ public class Serialization {
             throws IOException, ClassNotFoundException {
             String name = BlacklistClassResolver.DEFAULT.check(desc.getName());
             MultiClassLoader loader = AccessController
-                .doPrivileged(J2DoPrivHelper.newMultiClassLoaderAction());
+                .doPrivileged(MultiClassLoader.newMultiClassLoaderAction());
             addContextClassLoaders(loader);
             loader.addClassLoader(getClass().getClassLoader());
             loader.addClassLoader(MultiClassLoader.SYSTEM_LOADER);

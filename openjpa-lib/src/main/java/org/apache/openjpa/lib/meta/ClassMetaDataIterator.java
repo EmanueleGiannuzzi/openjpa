@@ -75,7 +75,7 @@ public class ClassMetaDataIterator implements MetaDataIterator {
 
         if (loader == null) {
             MultiClassLoader multi = AccessController
-                .doPrivileged(J2DoPrivHelper.newMultiClassLoaderAction());
+                .doPrivileged(MultiClassLoader.newMultiClassLoaderAction());
             multi.addClassLoader(MultiClassLoader.SYSTEM_LOADER);
             multi.addClassLoader(MultiClassLoader.THREAD_LOADER);
             multi.addClassLoader(getClass().getClassLoader());

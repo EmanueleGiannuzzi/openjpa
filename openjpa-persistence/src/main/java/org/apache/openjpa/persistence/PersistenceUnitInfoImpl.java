@@ -250,7 +250,7 @@ public class PersistenceUnitInfoImpl
     public void validateJarFileName(String name) {
         ClassLoader contextClassLoader = AccessController.doPrivileged(J2DoPrivHelper.getContextClassLoaderAction());
         MultiClassLoader loader = AccessController
-            .doPrivileged(J2DoPrivHelper.newMultiClassLoaderAction());
+            .doPrivileged(MultiClassLoader.newMultiClassLoaderAction());
         loader.addClassLoader(contextClassLoader);
         loader.addClassLoader(getClass().getClassLoader());
         loader.addClassLoader(MultiClassLoader.THREAD_LOADER);

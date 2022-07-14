@@ -1105,23 +1105,6 @@ public abstract class J2DoPrivHelper {
     }
 
     /**
-     * Return a PrivilegeAction object for new MultiClassLoader().
-     *
-     * Requires security policy:
-     *   'permission java.lang.RuntimePermission "createClassLoader";'
-     *
-     * @return MultiClassLoader
-     */
-    public static PrivilegedAction<MultiClassLoader> newMultiClassLoaderAction() {
-        return new PrivilegedAction() {
-            @Override
-            public MultiClassLoader run() {
-                return new MultiClassLoader();
-            }
-        };
-    }
-
-    /**
      * Return a PrivilegeAction object for new BCClassLoader().
      *
      * Requires security policy:

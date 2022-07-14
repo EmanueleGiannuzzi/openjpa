@@ -53,7 +53,7 @@ public class ProductDerivations {
     private static final Throwable[] _derivationErrors;
     private static String[] _prefixes;
     static {
-        MultiClassLoader l = AccessController.doPrivileged(J2DoPrivHelper.newMultiClassLoaderAction());
+        MultiClassLoader l = AccessController.doPrivileged(MultiClassLoader.newMultiClassLoaderAction());
         l.addClassLoader(0, AccessController
             .doPrivileged(J2DoPrivHelper.getClassLoaderAction(ProductDerivations.class)));
         l.addClassLoader(1, AccessController.doPrivileged(J2DoPrivHelper.getContextClassLoaderAction()));

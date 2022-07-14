@@ -179,7 +179,7 @@ public class ConfigurationImpl
      */
     public boolean loadGlobals() {
         MultiClassLoader loader = AccessController
-            .doPrivileged(J2DoPrivHelper.newMultiClassLoaderAction());
+            .doPrivileged(MultiClassLoader.newMultiClassLoaderAction());
         loader.addClassLoader(AccessController.doPrivileged(
             J2DoPrivHelper.getContextClassLoaderAction()));
         loader.addClassLoader(getClass().getClassLoader());

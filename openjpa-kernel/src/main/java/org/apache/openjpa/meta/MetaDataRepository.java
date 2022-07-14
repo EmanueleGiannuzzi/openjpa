@@ -323,7 +323,7 @@ public class MetaDataRepository implements PCRegistry.RegisterClassListener, Con
         }
 
 
-        MultiClassLoader multi = AccessController.doPrivileged(J2DoPrivHelper.newMultiClassLoaderAction());
+        MultiClassLoader multi = AccessController.doPrivileged(MultiClassLoader.newMultiClassLoaderAction());
         multi.addClassLoader(AccessController.doPrivileged(J2DoPrivHelper.getContextClassLoaderAction()));
         multi.addClassLoader(AccessController.doPrivileged(J2DoPrivHelper
             .getClassLoaderAction(MetaDataRepository.class)));

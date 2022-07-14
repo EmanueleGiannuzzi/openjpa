@@ -194,7 +194,7 @@ public abstract class AbstractTask extends MatchingTask {
 
     private MultiClassLoader getConfigPropertiesResourceLoader() {
         MultiClassLoader loader = AccessController
-                .doPrivileged(J2DoPrivHelper.newMultiClassLoaderAction());
+                .doPrivileged(MultiClassLoader.newMultiClassLoaderAction());
         loader.addClassLoader(getClassLoader());
         loader.addClassLoader(AccessController.doPrivileged(
                 J2DoPrivHelper.getClassLoaderAction(_conf.getClass())));

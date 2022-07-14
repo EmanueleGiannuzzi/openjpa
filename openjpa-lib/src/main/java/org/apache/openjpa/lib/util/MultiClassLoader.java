@@ -21,6 +21,7 @@ package org.apache.openjpa.lib.util;
 import java.io.IOException;
 import java.net.URL;
 import java.security.AccessController;
+import java.security.PrivilegedAction;
 import java.security.PrivilegedActionException;
 import java.util.ArrayList;
 import java.util.Enumeration;
@@ -206,6 +207,24 @@ public class MultiClassLoader extends ClassLoader {
      */
     public boolean isEmpty() {
         return _loaders.isEmpty();
+    }
+
+
+    /**
+     * Return a PrivilegeAction object for new MultiClassLoader().
+     *
+     * Requires security policy:
+     *   'permission java.lang.RuntimePermission "createClassLoader";'
+     *
+     * @return MultiClassLoader
+     */
+    public static PrivilegedAction<MultiClassLoader> newMultiClassLoaderAction() {
+        return new PrivilegedAction() {
+            @Override
+            public MultiClassLoader run() {
+                return new MultiClassLoader();
+            }
+        };
     }
 
     @Override

@@ -57,7 +57,7 @@ public class ClassResolverImpl
         // construct a multi class loader that will delegate in the order
         // described in section 12.5 of the spec
         MultiClassLoader loader = AccessController
-            .doPrivileged(J2DoPrivHelper.newMultiClassLoaderAction());
+            .doPrivileged(MultiClassLoader.newMultiClassLoaderAction());
         if (contextLoader != null)
             loader.addClassLoader(contextLoader);
         loader.addClassLoader(threadLoader);

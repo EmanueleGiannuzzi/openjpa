@@ -32,7 +32,7 @@ import org.apache.openjpa.lib.util.MultiClassLoader;
 public class MultiLoaderClassResolver implements ClassResolver {
 
     final private MultiClassLoader _loader = AccessController
-        .doPrivileged(J2DoPrivHelper.newMultiClassLoaderAction());
+        .doPrivileged(MultiClassLoader.newMultiClassLoaderAction());
 
     public MultiLoaderClassResolver() {
     }
